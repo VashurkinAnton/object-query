@@ -1,5 +1,5 @@
 {
-  "name": "object-query",
+  "name": "o-query",
   "version": "1.0.0",
   "description": "Ease way to get, set and find object property.",
   "main": "index.js",

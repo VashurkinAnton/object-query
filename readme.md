@@ -2,16 +2,16 @@
 Ease way to get, set and find object property.
 ##Instalation
 ```
-npm install object-query
+npm install o-query
 ``` 
 ##Usage 
 For ES5
 ```
-var oQuery = require('object-query');
+var oQuery = require('o-query');
 ```
 or for ES6
 ```
-import * as oQuery from 'object-query'
+import * as oQuery from 'o-query'
 ```
 
 ##Methods
