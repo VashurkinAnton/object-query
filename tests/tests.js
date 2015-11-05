@@ -12,7 +12,10 @@ var obj = {
 	},
 	arr: [1,2,4, {num: 321}, {num: 'str num in arr'}]
 };
-console.log('Find all object will contains "num" property');
+console.log('Main object');
+console.log(obj);
+console.log();
+console.log('Find all objects will contains "num" property');
 console.log(oQuery.wildcard('/**', ['num'], obj));
 console.log();
 console.log('Get object property ["b"]["num"]', '----', oQuery.get('/b/num', obj) === obj['b']['num'], '\n');

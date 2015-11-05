@@ -1,0 +1,28 @@
+{
+  "name": "object-query",
+  "version": "1.0.0",
+  "description": "Ease way to get, set and find object property.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node ./tests/tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VashurkinAnton/object-query.git"
+  },
+  "keywords": [
+    "oQuery",
+    "get",
+    "wildcard",
+    "object"
+  ],
+  "author": "Anton Vashurkin",
+  "license": "GNU/PGLv3",
+  "bugs": {
+    "url": "https://github.com/VashurkinAnton/object-query/issues"
+  },
+  "homepage": "https://github.com/VashurkinAnton/object-query#readme"
+}
