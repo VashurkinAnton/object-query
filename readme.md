@@ -1,10 +1,12 @@
-#Object query
+# Object query
 Ease way to get, set and find object property.
-##Instalation
+
+## Instalation
 ```
 npm install o-query
 ``` 
-##Usage 
+## Usage 
+
 For ES5
 ```
 var oQuery = require('o-query');
@@ -14,7 +16,7 @@ or for ES6
 import * as oQuery from 'o-query'
 ```
 
-##Methods
+## Methods
 
 In all demos uses this object
 ```
@@ -69,5 +71,6 @@ Find props by pattern and params
 console.log(oQuery.wildcard('/**', ['num'], obj));
 ```
 
-##Licese
+## Licese
+
 See license in LICENSE.md
