@@ -1,13 +1,11 @@
 "use strict";
+
 (function (root, factory) {
     // Configuration
     var exportName = 'oQuery';
     var dependenciesNames = [];
 
-    if (typeof define === 'function' && define.amd) {
-        // AMD. Register as an anonymous module.
-        define(exportName, dependencies, factory);
-    } else if (typeof exports === 'object') {
+    if (typeof exports === 'object') {
         // Node. Does not work with strict CommonJS, but
         // only CommonJS-like environments that support module.exports,
         // like Node.
@@ -15,6 +13,9 @@
             return require(name);
         });
         module.exports = factory.apply(root, resolvedDependencies);
+    } else if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(exportName, dependencies, factory);
     } else {
         // Browser globals (root is window)
         var resolvedDependencies = dependenciesNames.map(function (name) {
