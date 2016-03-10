@@ -3,25 +3,18 @@
 (function (root, factory) {
     // Configuration
     var exportName = 'oQuery';
-    var dependenciesNames = [];
 
     if (typeof exports === 'object') {
         // Node. Does not work with strict CommonJS, but
         // only CommonJS-like environments that support module.exports,
         // like Node.
-        var resolvedDependencies = dependenciesNames.map(function (name) {
-            return require(name);
-        });
-        module.exports = factory.apply(root, resolvedDependencies);
+        module.exports = factory.call(root);
     } else if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(exportName, dependencies, factory);
+        define(exportName, [], factory);
     } else {
         // Browser globals (root is window)
-        var resolvedDependencies = dependenciesNames.map(function (name) {
-            return root[name];
-        });
-        root[exportName] = factory.apply(root, resolvedDependencies);
+        root[exportName] = factory.call(root);
     }
 
 // Dependencies passed as arguments
@@ -47,7 +40,7 @@
                 if (typeof target[i] === 'undefined') {
                     dst[i] = e
                 } else if (typeof e === 'object') {
-                    dst[i] = merge(target[i], e)
+                    dst[i] = objectQuery.deepMerge(target[i], e)
                 } else {
                     if (target.indexOf(e) === -1) {
                         dst.push(e)
@@ -68,7 +61,7 @@
                     if (!target[key]) {
                         dst[key] = src[key]
                     } else {
-                        dst[key] = merge(target[key], src[key])
+                        dst[key] = objectQuery.deepMerge(target[key], src[key])
                     }
                 }
             });
