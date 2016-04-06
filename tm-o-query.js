@@ -1,3 +1,13 @@
+// ==UserScript==
+// @name         o-query
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  Simple way for work with js objects.
+// @author       Anton Vashurkin <cronosfera2@gmail.com>
+// @match        http://*/*
+// @grant        none
+// ==/UserScript==
+/* jshint -W097 */
 "use strict";
 
 (function (root, factory) {
@@ -14,7 +24,7 @@
         define(exportName, [], factory);
     } else {
         // Browser globals (root is window)
-        root[exportName] = factory.call(root);
+        window[exportName] = factory.call(root);
     }
 
 // Dependencies passed as arguments
@@ -95,13 +105,7 @@
             obj = obj[points[i]];
             if(obj === undefined){
                 return undefined;
-            }else if (obj === null){
-                if(i === points.length - 1){
-                    return obj;
-                }else{
-                    return undefined;
-                }
-             }
+            }
         }
         return obj;
     };
